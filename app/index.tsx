@@ -1,6 +1,6 @@
-import { Text, View } from "react-native";
+import { Text, View,Button } from "react-native";
 
-// import * as Sentry from "@sentry/react-native";
+import * as Sentry from "@sentry/react-native";
 
 export default function Index() {
   return (
@@ -14,6 +14,7 @@ export default function Index() {
       <Text style={{fontSize: 20}}>Let's crash remotely with Sentry!</Text>
 
       {/* insert button here */}
+      <Button title='Try!' onPress={ () => { Sentry.captureException(new Error('First error')) }}/>
 
     </View>
   );
